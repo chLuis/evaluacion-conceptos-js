@@ -292,25 +292,15 @@ let precioxUnidad = []
 let cantidadComprada = []
 let log = []
 let costoUnitario, cantidad
-let articulo = prompt("Ingrese el nombre del producto. Para salir ingrese 0")
+let articulo = ""
 let costoTotal = 0
-
-if(articulo !== "0") {
-    item.push(articulo)
-    carrito.push(articulo)
-    costoUnitario = prompt("Ingrese el PRECIO del producto")
-    precioxUnidad.push(costoUnitario)
-    cantidad = prompt("Ingrese la CANTIDAD a comprar")
-    cantidadComprada.push(cantidad)
-    log.push(`[Agrego] ${articulo} - ${cantidad} ${parseInt(cantidad) > 1 ? "unidades" : "unidad" } - $${costoUnitario}.`)
-} else {
-    alert("Ingrese articulos para poder continuar")
-}
 
 
 while(articulo !== "0") {
-    articulo = prompt("Ingrese el nombre del producto. Para salir ingrese 0");
-    if (articulo !== "0") {
+    articulo = prompt("Ingrese el nombre del producto. Para salir o modificar un articulo ingrese 0");
+    if (articulo === "") {
+        alert("Debe ingresar un articulo para continuar")
+    } else if (articulo !== "0") {
         carrito.push(articulo)
         item.push(articulo)
         costoUnitario = prompt("Ingrese el PRECIO del producto");
