@@ -271,8 +271,10 @@ console.log(item)
 console.log(precioxUnidad)
 console.log(cantidadComprada)
 */
+
 // 9) Crearemos un log.
-// Los sistemas de logueo son sistemas que muestran todo el trackeo de los datos. Suelen usarse en sistemas de bases de datos que requieren auditoría para comprender quiénes hicieron determinados cambios.
+// Los sistemas de logueo son sistemas que muestran todo el trackeo de los datos. Suelen usarse en sistemas de bases de datos que
+// requieren auditoría para comprender quiénes hicieron determinados cambios.
 // a) Al ejercicio anterior se agregará un vector nuevo que irá grabando cada movimiento que se genere. Si seguimos el ejercicio 6 quedaría:
 // ****** INICIO LOG ********
 // [AGREGO] Manteca - 1 unidad - $500
@@ -284,3 +286,75 @@ console.log(cantidadComprada)
 // Nota: Lo importante en los sistemas de logueo es que no se pierde ningún valor de los ingresados.
 
 
+let carrito = []
+let item = []
+let precioxUnidad = []
+let cantidadComprada = []
+let log = []
+let costoUnitario, cantidad
+let articulo = prompt("Ingrese el nombre del producto. Para salir ingrese 0")
+let costoTotal = 0
+
+if(articulo !== "0") {
+    item.push(articulo)
+    carrito.push(articulo)
+    costoUnitario = prompt("Ingrese el PRECIO del producto")
+    precioxUnidad.push(costoUnitario)
+    cantidad = prompt("Ingrese la CANTIDAD a comprar")
+    cantidadComprada.push(cantidad)
+    log.push(`[Agrego] ${articulo} - ${cantidad} ${parseInt(cantidad) > 1 ? "unidades" : "unidad" } - $${costoUnitario}.`)
+} else {
+    alert("Ingrese articulos para poder continuar")
+}
+
+
+while(articulo !== "0") {
+    articulo = prompt("Ingrese el nombre del producto. Para salir ingrese 0");
+    if (articulo !== "0") {
+        carrito.push(articulo)
+        item.push(articulo)
+        costoUnitario = prompt("Ingrese el PRECIO del producto");
+        precioxUnidad.push(costoUnitario)
+        cantidad = prompt("Ingrese la CANTIDAD a comprar")
+        cantidadComprada.push(cantidad)
+        log.push(`[Agrego] ${articulo} - ${cantidad} ${parseInt(cantidad) > 1 ? "unidades" : "unidad" } - $${costoUnitario}.`)
+    } else {
+        let modificar = prompt("¿Desea modificar algún item? Responda si o no")
+        if (modificar === "si") {
+            articuloABorrar = prompt("¿Cual es el articulo que desea modificar?")
+
+            let itemABorrar = item.indexOf(articuloABorrar)
+            let costoABorrar = precioxUnidad[itemABorrar]
+            let cantidadABorrar = cantidadComprada[itemABorrar]
+
+            item[itemABorrar] = prompt("Ingrese el NUEVO item por favor")
+            precioxUnidad[itemABorrar] = prompt("PRECIO por unidad del nuevo producto")
+            cantidadComprada[itemABorrar] = prompt("¿CUANTAS unidades desea comprar?")
+
+            log.push(`[Modifico] ${articuloABorrar} por ${item[itemABorrar]} - ${cantidadABorrar} ${parseInt(cantidadABorrar) > 1 ? "unidades" : "unidad" } por ${cantidadComprada[itemABorrar]} ${parseInt(cantidadComprada[itemABorrar]) > 1 ? "unidades" : "unidad" } - $${costoABorrar} por $${precioxUnidad[itemABorrar]}.`)
+            articulo = ""
+        }
+    }
+}
+
+
+console.log("#######################")
+console.log("Items:")
+for(let i = 0; i < item.length; i++){
+    console.log(" - " + item[i])
+    costoTotal = costoTotal + (precioxUnidad[i] * cantidadComprada[i])
+}
+console.log("Total a facturar: $"+ costoTotal)
+console.log("#######################")
+
+//console.log(item)
+//console.log(precioxUnidad)
+//console.log(cantidadComprada)
+
+
+
+console.log("********** Inicio del LOG **********")
+for(let i = 0; i < log.length; i++) {
+    console.log(log[i])
+}
+console.log("********** Final del LOG **********")
