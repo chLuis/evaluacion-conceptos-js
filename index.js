@@ -41,33 +41,16 @@ if(num1 === num2 && num2 === num3) {
 
 // e) Pida al usuario tres números y muéstrelos ordenados de mayor a menor.
 /*
-let num1, num2, num3;
-num1 = parseInt(prompt("Ingrese un numero"))
-num2 = parseInt(prompt("Ingrese otro numero"))
-num3 = parseInt(prompt("Ingrese un tercer numero"))
 
-if(num1 > num2 && num1 > num3) {
-    if(num2 > num3) {
-        alert(`1Los números ingresados de mayor a menor son: ${num1}, ${num2} y ${num3}.`)//3 2 1
-    } else {
-    alert(`2Los números ingresados de mayor a menor son: ${num1}, ${num3} y ${num2}.`)//3 1 2
-    }
-} if (num2 > num1 && num2 > num3) {
-    if(num1 > num3) {
-        alert(`3Los números ingresados de mayor a menor son: ${num2}, ${num1} y ${num3}.`)//2 3 1
-    } else {
-    alert(`4Los números ingresados de mayor a menor son: ${num2}, ${num3} y ${num1}.`)//1 3 2
-    }
-} if (num3 > num1 && num3 > num2) {
-    if(num1 > num2) {
-        alert(`5Los números ingresados de mayor a menor son: ${num3}, ${num1} y ${num2}.`) //2 1 3
-    } else {
-    alert(`6Los números ingresados de mayor a menor son: ${num3}, ${num2} y ${num1}.`)//1 2 3
-    }
-}
+let numeros = []
+numeros.push(parseInt(prompt("ingrese un numero")))
+numeros.push(parseInt(prompt("ingrese un segundo numero")))
+numeros.push(parseInt(prompt("ingrese un tercer numero")))
+
+numeros.sort((a,b) => b - a)
+alert("Los numeros que ingresaste ordenados de mayor a menor son: " + numeros)
+
 */
-
-//alert(`Los números ingresados de mayor a menor son: ${num1}, ${num2} y ${num3}.`)
 
 // f) Pida al usuario su peso en kg y su altura en metros y muestre su índice de masa corporal (IMC): Peso (en Kg) / Altura (en metros) al cuadrado.
 // (IMC): Peso (en Kg) / (Altura (en metros) al cuadrado).
