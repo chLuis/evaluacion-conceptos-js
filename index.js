@@ -306,7 +306,7 @@ while(articulo !== "0") {
         precioxUnidad.push(costoUnitario)
         cantidad = prompt("Ingrese la CANTIDAD a comprar")
         cantidadComprada.push(cantidad)
-        log.push(`[Agrego] ${articulo} - ${cantidad} ${parseInt(cantidad) > 1 ? "unidades" : "unidad" } - $${costoUnitario}.`)
+        log.push(`[Agrego] ${articulo} - ${cantidad} ${parseInt(cantidad) > 1 ? "unidades" : "unidad" } - $${costoUnitario} c/u. --> ${cantidad * costoUnitario}`)
     } else {
         let modificar = prompt("¿Desea modificar algún item? Responda si o no")
         if (modificar === "si") {
@@ -320,7 +320,7 @@ while(articulo !== "0") {
             precioxUnidad[itemABorrar] = prompt("PRECIO por unidad del nuevo producto")
             cantidadComprada[itemABorrar] = prompt("¿CUANTAS unidades desea comprar?")
 
-            log.push(`[Modifico] ${articuloABorrar} por ${item[itemABorrar]} - ${cantidadABorrar} ${parseInt(cantidadABorrar) > 1 ? "unidades" : "unidad" } por ${cantidadComprada[itemABorrar]} ${parseInt(cantidadComprada[itemABorrar]) > 1 ? "unidades" : "unidad" } - $${costoABorrar} por $${precioxUnidad[itemABorrar]}.`)
+            log.push(`[Modifico] ${articuloABorrar} por ${item[itemABorrar]} - ${cantidadABorrar} ${parseInt(cantidadABorrar) > 1 ? "unidades" : "unidad" } por ${cantidadComprada[itemABorrar]} ${parseInt(cantidadComprada[itemABorrar]) > 1 ? "unidades" : "unidad" } - $${costoABorrar} por $${precioxUnidad[itemABorrar]} c/u.`)
             articulo = ""
         }
     }
