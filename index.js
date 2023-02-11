@@ -86,8 +86,24 @@ if (imc < 18.5) {
 // b) Mostrá el tipo de dato.
 // c) Si el tipo de dato no es un NUMBER, entonces mostrá un console.error "Ingresá un valor numérico"
 // d) Si el tipo de dato no es un NUMBER volvé a pedirlo tantas veces sea necesario hasta que se valide que el número ingresado es de tipo NUMBER
+/*
+let numero, numeroParseado
+do {
+    numero = prompt("ingrese un numero")
+    numeroParseado = parseInt(numero)
+    if (numero != numeroParseado) {
+        console.error(numero + " no es un número, ingresá un valor numérico.")
+    }
+}
+while(numero != numeroParseado)
+console.log("Ingresaste el número " + numero + ".")
 
+// numero           es un string 123
+// numeroParseado   es un number 123
 
+// numero           es un string ASD
+// numeroParseado   es un NaN
+*/
 
 // 5)
 // a) Ingresá un vector llamado dias, en donde se carguen los días lunes a domingo.
